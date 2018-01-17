@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 set -e
-DATE_TAG=`date +%s%3S`
-NEW_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazon.com/$IMAGE_REPO:$DATE_TAG
-
+DATE_TAG=`date +%s%3N`
+NEW_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO:$DATE_TAG
 
 echo "Building image..."
 docker build -t $NEW_IMAGE .
